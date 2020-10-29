@@ -7,7 +7,7 @@ import { Message } from '../models/message';
 })
 export class ServerService {
 
-  //private url = 'http://localhost:8080/EmailWS/ws/';
+  // private url = 'http://localhost:8080/';
   //private url = 'https://sip.jpbx.com.br:8443/';
   private url = 'https://email-site-jpbx.herokuapp.com/';
 
