@@ -62,6 +62,7 @@ export class SipCallComponent implements OnInit {
   ngOnInit() {
     this.createSipStack();
     sipStack.start();
+    console.log(sipStack)
     this.btn = document.querySelector('#btnSip');
   }
 
@@ -73,7 +74,7 @@ export class SipCallComponent implements OnInit {
         password: this.credentials.password,
         display_name: 'Site JPBX', // optional
         websocket_proxy_url: 'wss://' + this.credentials.domain + ':8089/ws',
-      //outbound_proxy_url: 'udp://example.org:5060', // optional
+        ice_servers: [{url: 'stun:stun.l.google.com:19302' }],
         enable_rtcweb_breaker: false, // optional
         events_listener: { events: '*', listener: this.eventsListener }, // optional: '*' means all events
         sip_headers: [ // optional
